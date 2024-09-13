@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Praktikum 4</string>
+    <string name="food_and_mood">Food and Mood</string>
+    <string name="starters">Starters</string>
+    <string name="mains">Mains</string>
+    <string name="desserts">Desserts</string>
+    <string name="our_store">Our Store</string>
+    <string name="order_now">Order Now</string>
+    <string name="hello">Hello, This is My New Activity!</string>
+    <string name="pilih_dan_pesan">Pilih Menu Main Course:</string>
+    <string name="fried_rice">Fried Rice</string>
+    <string name="salad">Special Salad</string>
+    <string name="beef">Grilled Steak Beef</string>
+    <string name="pilih_menu_desserts">Pilih Menu Desserts:</string>
+    <string name="brownies">Chocolate Brownies</string>
+    <string name="donuts">Baked Vanilla Donuts</string>
+    <string name="croissants">Butter Croissants</string>
+</resources>
