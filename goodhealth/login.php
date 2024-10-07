@@ -1,0 +1,31 @@
+<?php
+
+include 'db.php';
+
+$data = json_decode(file_get_contents('php://input'));
+$username = $data->username;
+$password = sha1($data->password);
+
+$query_user = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+
+$sql = $conn->query($query_user);
+$result = $sql->fetch(PDO::FETCH_ASSOC);
+$response = null;
+
+if ($result != null) {
+    $id_pasien = $result['id_pasien'];
+
+    $query_pasien = "SELECT * FROM pasien WHERE id_pasien = '$id_pasien'";
+    $result_pasien = $conn->query($query_pasien)->fetch(PDO::FETCH_ASSOC);
+    $result_pasien = ($result_pasien != false) ? $result_pasien : null;
+
+    $result['message'] = "Selamat datang" . $result_pasien['username'];
+    $response['user'] = $result;
+    $response['user']['id_pasien'] = $result_pasien;
+} else {
+    http_response_code(401);
+    $response['message'] = "Username atau Password salah";
+    $response['user'] = null;
+}
+
+echo json_encode($response);
